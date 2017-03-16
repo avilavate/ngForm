@@ -13,7 +13,8 @@ export class DataDrivenFormComponent implements OnInit {
     this.myForm = new FormGroup(
       {
         'username': new FormControl('', Validators.required),
-        'password': new FormControl('', Validators.required)
+        'password': new FormControl('', Validators.required),
+        'email': new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)]),
       }
     )
   }
