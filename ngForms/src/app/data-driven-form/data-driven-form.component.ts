@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validator } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms'
 
 @Component({
@@ -12,8 +12,8 @@ export class DataDrivenFormComponent implements OnInit {
   constructor() {
     this.myForm = new FormGroup(
       {
-        'username': new FormControl(),
-        'password': new FormControl()
+        'username': new FormControl('', Validators.required),
+        'password': new FormControl('', Validators.required)
       }
     )
   }
