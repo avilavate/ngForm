@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <form class="form-signin" (ngSubmit)="submitForm()" [formGroup]="myForm">
+    <h2 class="form-signin-heading">Please login</h2>
+
+    <input type="text" class="form-control" name="username" placeholder="Email Address" autofocus="" formControlName="username"/>
+    <input type="password" class="form-control" name="password" placeholder="Password" formControlName="password"/>
+
+    <label class="checkbox" name=password>
+        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe" > Remember me
+      </label>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Login</button>
+  </form>
+</div>

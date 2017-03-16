@@ -7,6 +7,6 @@
       <label class="checkbox" name=password>
         <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe" ngModel> Remember me
       </label>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" >Login</button>   
+      <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit"  [disabled]="!f.valid">Login</button>   
     </form>
   </div>
