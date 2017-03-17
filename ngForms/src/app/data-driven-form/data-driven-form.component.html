@@ -7,6 +7,7 @@
       <input type="text" class="form-control" name="username" placeholder="User Name" autofocus="" formControlName="username" />
       <input type="password" class="form-control" name="password" placeholder="Password" formControlName="password" />
       <input type="email" class="form-control" name="email" placeholder="Email Address" formControlName="email">
+      <div style="color:red" *ngIf="!myForm.controls.email.valid && myForm.controls.email.dirty ">Email is not correct!</div>
       <label class="checkbox" name=password>
         <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe" > Remember me
       </label>
