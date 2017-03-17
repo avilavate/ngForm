@@ -11,15 +11,6 @@
       <label class="checkbox" name=password>
         <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe" > Remember me
       </label>
-      <div class="row">
-        <div formArrayName="hobbies">
-          <div class="col-xs-3" *ngFor="let g of myForm.genders; let i=index">
-             <input [formControlName]="i" type="text">
-          </div>
-          <button (click)="addHobby()">Add Hobbies</button>
-        </div>
-        <div class="col-xs-p"></div>
-      </div>
       <button class="btn btn-primary btn-block" type="submit" name="submit" [disabled]="!myForm.valid">Login</button>
     </form>
   </div>

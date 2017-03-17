@@ -15,7 +15,6 @@ export class DataDrivenFormComponent implements OnInit {
         'username': new FormControl('Max', Validators.required),
         'password': new FormControl('', Validators.required),
         'email': new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)]),
-        'hobbies': new FormArray([new FormControl('M', Validators.required), new FormControl('F', Validators.required)])
       }
     )
   }
@@ -23,7 +22,7 @@ export class DataDrivenFormComponent implements OnInit {
     console.log(this.myForm);
   }
   addHobby(){
-    
+
   }
   ngOnInit() {
   }
