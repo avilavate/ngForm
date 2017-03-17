@@ -1,11 +1,19 @@
-<input type="checkbox" class="checkbox-circle" name="data-driven" value="switchDataDriven" [(ngModel)]="switchDataDriven">data-driven?<br>
-
-<div *ngIf="!switchDataDriven">
-    <h4>template driven form</h4>
-    <app-login> </app-login>
+<div class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4">
+        <input type="checkbox" class="checkbox-circle" name="data-driven" value="switchDataDriven" [(ngModel)]="switchDataDriven">data-driven?
+    </div>
+    <div class="col-xs-4"></div>
 </div>
-<hr>
-<div *ngIf="switchDataDriven">
-    <h4>data-driven form</h4>
-    <app-data-driven-form></app-data-driven-form>
+<div class="row">
+
+    <div *ngIf="!switchDataDriven">
+        <h4>template driven form</h4>
+        <app-login> </app-login>
+    </div>
+    <hr>
+    <div *ngIf="switchDataDriven">
+        <h4>data-driven form</h4>
+        <app-data-driven-form></app-data-driven-form>
+    </div>
 </div>

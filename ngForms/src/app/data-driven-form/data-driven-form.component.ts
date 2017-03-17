@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule, FormArray } from '@angular/forms'
 
 @Component({
   selector: 'app-data-driven-form',
@@ -15,11 +15,15 @@ export class DataDrivenFormComponent implements OnInit {
         'username': new FormControl('Max', Validators.required),
         'password': new FormControl('', Validators.required),
         'email': new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)]),
+        'hobbies': new FormArray([new FormControl('M', Validators.required), new FormControl('F', Validators.required)])
       }
     )
   }
   submitForm() {
     console.log(this.myForm);
+  }
+  addHobby(){
+    
   }
   ngOnInit() {
   }
