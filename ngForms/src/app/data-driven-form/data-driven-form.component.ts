@@ -13,16 +13,25 @@ export class DataDrivenFormComponent implements OnInit {
     this.myForm = new FormGroup(
       {
         'username': new FormControl('Max', Validators.required),
-        'password': new FormControl('', [Validators.required, this.myValidator]),
+        'password': new FormControl('', [Validators.required, this.myValidator.bind(this)]),
         'email': new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)]),
       }
     )
   }
   myValidator(password: FormControl): { [key: string]: boolean } {
-    if (<string>password.value === 'Avil') {
+    debugger;
+    if (this.myForm && <string>password.value === this.myForm.value.username ) {
       return { 'password': false };
     }
   }
+
+  // myAsyncValidator(password: FormControl): { [key: string]: boolean } {
+  //   setTimeout(function () {
+  //     if (<string>password.value === 'Avil') {
+  //       return { 'password': false };
+  //     }
+  //   }, 1500);
+  // }
 
   submitForm() {
     console.log(this.myForm);
